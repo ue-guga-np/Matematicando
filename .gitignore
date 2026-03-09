@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Matematicando.exe
+Matematicando.console.exe
+Matematicando.pck
+export_presets.cfg

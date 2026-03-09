@@ -17,6 +17,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 32.0
+offset_right = -1.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.4509804)
@@ -69,3 +73,24 @@ size_flags_horizontal = 3
 [node name="TelaInicial" type="Button" parent="Botoes"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TextoReiniciar" type="Label" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 489.0
+offset_right = 643.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 23
+text = "Reiniciar
+"
+
+[node name="TextoTelaInicial" type="Label" parent="."]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 469.0
+offset_right = 750.0
+offset_bottom = 542.0
+theme_override_font_sizes/font_size = 25
+text = "Tela
+Inicial"
+horizontal_alignment = 1
