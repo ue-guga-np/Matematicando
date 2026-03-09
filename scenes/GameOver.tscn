@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxhl2cau54cy2"]
+
+[ext_resource type="Script" uid="uid://b3cxkhqnl51gp" path="res://scripts/GameOver.gd" id="1_6bcno"]
+
+[node name="GameOver" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bcno")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="Fim" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.209
+anchor_right = 0.5
+anchor_bottom = 0.209
+offset_left = -171.0
+offset_top = -75.48001
+offset_right = 178.0
+offset_bottom = 65.51999
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "FIM DO JOGO
+VOCÊ PERDEU!"
+horizontal_alignment = 1
+
+[node name="Pontos" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.43400002
+anchor_right = 0.49800003
+anchor_bottom = 0.43400002
+offset_left = -20.440063
+offset_top = -24.480011
+offset_right = 19.559937
+offset_bottom = 24.519989
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "67"
+
+[node name="Botoes" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 463.0
+offset_right = 740.0
+offset_bottom = 552.0
+metadata/_edit_group_ = true
+
+[node name="Reiniciar" type="Button" parent="Botoes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TelaInicial" type="Button" parent="Botoes"]
+layout_mode = 2
+size_flags_horizontal = 3

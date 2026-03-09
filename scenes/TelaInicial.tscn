@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwf26bcslnj01"]
+
+[ext_resource type="Script" uid="uid://bakl6q0xsjnlm" path="res://scripts/TelaInicial.gd" id="1_t3tad"]
+
+[sub_resource type="SystemFont" id="SystemFont_uham1"]
+
+[node name="TelaInicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3tad")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="CheckSubtracao" type="CheckBox" parent="Fundo"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 530.0
+offset_right = 1222.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 30
+text = "Subtração (-)"
+
+[node name="CheckMultiplicacao" type="CheckBox" parent="Fundo"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 580.0
+offset_right = 1265.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 30
+text = "Multiplicação (x)
+"
+
+[node name="CheckDivisao" type="CheckBox" parent="Fundo"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 630.0
+offset_right = 1222.0
+offset_bottom = 680.0
+theme_override_font_sizes/font_size = 30
+text = "Divisão (÷)
+"
+
+[node name="CheckAdicao" type="CheckBox" parent="Fundo"]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 480.0
+offset_right = 1222.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 30
+disabled = true
+button_pressed = true
+text = "Adição (+)"
+
+[node name="NomeJogo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 166.0
+offset_right = 960.0
+offset_bottom = 270.0
+theme_override_fonts/font = SubResource("SystemFont_uham1")
+theme_override_font_sizes/font_size = 60
+text = "MATEMATICANDO"
+horizontal_alignment = 1
+
+[node name="Iniciar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 388.0
+offset_right = 740.0
+offset_bottom = 588.0

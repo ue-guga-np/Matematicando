@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ckv5n1koyomp8"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Pontos" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+
+[node name="Equacoes" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -151.0
+offset_right = 151.0
+offset_bottom = 57.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="Opcoes" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.30100003
+anchor_right = 0.5
+anchor_bottom = 0.30100003
+offset_left = -160.0
+offset_top = -31.720016
+offset_right = 160.0
+offset_bottom = 38.279984
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Opcao1" type="Button" parent="Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Opcao2" type="Button" parent="Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Opcao3" type="Button" parent="Opcoes"]
+layout_mode = 2
+size_flags_horizontal = 3
