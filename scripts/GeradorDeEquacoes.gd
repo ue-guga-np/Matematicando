@@ -8,6 +8,8 @@ var usar_subtracao = false
 var usar_multiplicacao = false
 var usar_divisao = false
 
+var velocidade_jogo = 50
+
 func gerar_nova_conta() -> String:
 	# Cria uma lista vazia para guardar quais operações podem cair
 	var operacoes_permitidas = []

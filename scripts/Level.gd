@@ -3,10 +3,13 @@ extends Node2D
 var pontos = 0
 var distancia_pulo = 250 
 var altura_proxima_plataforma = 0 
-var posicao_x_plataformas = 0 # Guarda o eixo X para não nascer torto
+var posicao_x_plataformas = 0 # Guarda o eixo X para não nascer torto 
+
+@export var velocidade_perigo = 50 # valor da barra que sobe atrás do player
+var jogo_iniciado = false
 
 var cena_game_over = preload("res://scenes/GameOver.tscn")
-var cena_plataforma = preload("res://scenes//plataforma.tscn")
+var cena_plataforma = preload("res://scenes/plataforma.tscn")
 
 @onready var label_equacao = $Hud/Equacoes
 @onready var label_pontos = $Hud/Pontos
@@ -18,6 +21,9 @@ var cena_plataforma = preload("res://scenes//plataforma.tscn")
 @onready var camera = $Camera2D
 
 func _ready():
+	velocidade_perigo = GeradorDeEquacoes.velocidade_jogo # Usa a variavel que persiste!
+	print("[Level] velocidade_perigo é", velocidade_perigo)
+
 	atualizar_conta()
 	atualizar_pontos()
 	
@@ -33,7 +39,7 @@ func _ready():
 	
 	area_dano.body_entered.connect(_on_perigo_encostou)
 	
-	area_dano.position.y = player.position.y - 150
+	area_dano.position.y = player.position.y + 100 - 495
 
 func atualizar_conta():
 	label_equacao.text = GeradorDeEquacoes.gerar_nova_conta()
@@ -49,6 +55,7 @@ func atualizar_conta():
 
 func _on_opcao_pressionada(botao_clicado):
 	if botao_clicado.text == str(GeradorDeEquacoes.resposta_correta):
+		jogo_iniciado = true
 		pontos += 10
 		player.acertou_conta() 
 		criar_plataforma() 
@@ -67,8 +74,10 @@ func atualizar_pontos():
 	label_pontos.text = "Pontos: " + str(pontos)
 
 func resetar_perigo():
-	# Diminuí de +600 para +400 para ficar logo ali embaixo da tela
-	area_dano.position.y = player.position.y - 200
+	# Retorna a lava para ali embaixo visivel (+100 de Y)
+	# O nó AreaDeDano tem um offset visual de ~495 pixels.
+	# Para a lava ficar visível a 100 pixels sob o jogador, descontamos esse offset.
+	area_dano.position.y = player.position.y + 100 - 495
 
 func criar_plataforma():
 	var nova_plataforma = cena_plataforma.instantiate()
@@ -93,8 +102,9 @@ func _on_perigo_encostou(body):
 		get_tree().paused = true 
 
 func _process(delta):
-	# Aumentei a velocidade de subida de 30 para 100
-	area_dano.position.y -= 50 * delta
+	# substitui o número padrão por uma variavel, facilita a manipulação
+	if jogo_iniciado:
+		area_dano.position.y -= velocidade_perigo * delta 
 	
 	if player.position.y < camera.position.y:
 		camera.position.y = player.position.y

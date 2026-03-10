@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS # Garante que os botões leiam os cliques mesmo no get_tree().paused!
 	# Conecta os botões
 	$Botoes/Reiniciar.pressed.connect(_on_reiniciar_pressionado)
 	$Botoes/TelaInicial.pressed.connect(_on_tela_inicial_pressionada)
@@ -16,4 +17,4 @@ func _on_reiniciar_pressionado():
 func _on_tela_inicial_pressionada():
 	get_tree().paused = false # Tira do pause
 	# Substitua pelo caminho exato da sua Tela Inicial
-	get_tree().change_scene_to_file("res://scenes//TelaInicial.tscn")
+	get_tree().change_scene_to_file("res://scenes/TelaInicial.tscn")
