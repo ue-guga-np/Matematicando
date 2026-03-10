@@ -21,7 +21,7 @@ var cena_plataforma = preload("res://scenes/plataforma.tscn")
 @onready var camera = $Camera2D
 
 func _ready():
-	velocidade_perigo = GeradorDeEquacoes.velocidade_jogo # Usa a variavel que persiste!
+	velocidade_perigo = GeradorDeEquacoes.velocidade_jogo # Usa a variavel que persiste
 	print("[Level] velocidade_perigo é", velocidade_perigo)
 
 	atualizar_conta()
@@ -49,9 +49,6 @@ func atualizar_conta():
 	botoes[0].text = str(GeradorDeEquacoes.resposta_correta)
 	botoes[1].text = str(GeradorDeEquacoes.resposta_correta + randi_range(1, 4))
 	botoes[2].text = str(GeradorDeEquacoes.resposta_correta - randi_range(1, 4))
-	
-	if botoes[1].text == botoes[2].text:
-		botoes[2].text = str(GeradorDeEquacoes.resposta_correta + 5)
 
 func _on_opcao_pressionada(botao_clicado):
 	if botao_clicado.text == str(GeradorDeEquacoes.resposta_correta):
@@ -88,7 +85,7 @@ func criar_plataforma():
 	altura_proxima_plataforma -= distancia_pulo
 
 func _on_perigo_encostou(body):
-	if body.name == "Player":
+	if body == player:
 		# Cria a tela de Game Over
 		var tela_fim = cena_game_over.instantiate()
 		

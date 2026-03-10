@@ -41,9 +41,15 @@ func _ready():
 	btn_veloc50.pressed.connect(func(): _on_velocidade_escolhida(50))
 	btn_veloc65.pressed.connect(func(): _on_velocidade_escolhida(75))
 
-	# opcionalmente configura o padrão
-	btn_veloc50.set_pressed(true)      # marca via setter
-	escolha_velocidade = 50
+	# Recupera a dificuldade global salva na memória
+	escolha_velocidade = GeradorDeEquacoes.velocidade_jogo
+	
+	if escolha_velocidade == 25:
+		btn_veloc35.button_pressed = true
+	elif escolha_velocidade == 50:
+		btn_veloc50.button_pressed = true
+	elif escolha_velocidade == 75:
+		btn_veloc65.button_pressed = true
 
 # --- FUNÇÕES DAS CAIXINHAS ---
 # O Godot automaticamente passa a variável 'ligado' (true/false) quando a caixa é clicada
