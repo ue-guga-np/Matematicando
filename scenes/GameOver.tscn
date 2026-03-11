@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxhl2cau54cy2"]
+[gd_scene load_steps=11 format=3 uid="uid://cxhl2cau54cy2"]
 
 [ext_resource type="Script" uid="uid://b3cxkhqnl51gp" path="res://scripts/GameOver.gd" id="1_6bcno"]
+[ext_resource type="Texture2D" uid="uid://ehxu6iitylhm" path="res://assets/botão_fim.png" id="2_4noiy"]
+[ext_resource type="Texture2D" uid="uid://bbgmnh7pgtov5" path="res://assets/botão_voltar.PNG" id="3_gijjb"]
+[ext_resource type="Texture2D" uid="uid://bxhnin0dkm5v2" path="res://assets/fim de jogo.png" id="4_88ekj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0winm"]
+texture = ExtResource("2_4noiy")
+region_rect = Rect2(904, 1081, 751, 338)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3qfp"]
+texture = ExtResource("2_4noiy")
+region_rect = Rect2(904, 1081, 751, 338)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_skdqa"]
+texture = ExtResource("2_4noiy")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(904, 1081, 751, 338)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dkuh"]
+texture = ExtResource("3_gijjb")
+region_rect = Rect2(1681, 1145, 470, 204)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0icj0"]
+texture = ExtResource("3_gijjb")
+region_rect = Rect2(1681, 1145, 470, 204)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5fq7v"]
+texture = ExtResource("3_gijjb")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(1681, 1145, 470, 204)
 
 [node name="GameOver" type="Control"]
 process_mode = 3
@@ -12,85 +47,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6bcno")
 
-[node name="Fundo" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 32.0
-offset_right = -1.0
-offset_bottom = 32.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.4509804)
-
-[node name="Fim" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.209
-anchor_right = 0.5
-anchor_bottom = 0.209
-offset_left = -171.0
-offset_top = -75.48001
-offset_right = 178.0
-offset_bottom = 65.51999
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "FIM DO JOGO
-VOCÊ PERDEU!"
-horizontal_alignment = 1
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+texture = ExtResource("4_88ekj")
+expand_mode = 2
 
 [node name="Pontos" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.49800003
-anchor_top = 0.43400002
-anchor_right = 0.49800003
-anchor_bottom = 0.43400002
-offset_left = -20.440063
-offset_top = -24.480011
-offset_right = 19.559937
-offset_bottom = 24.519989
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -162.0
+offset_right = 20.0
+offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 text = "67"
 
 [node name="Botoes" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 534.0
-offset_top = 463.0
-offset_right = 740.0
-offset_bottom = 552.0
-metadata/_edit_group_ = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -160.0
+offset_right = 275.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Reiniciar" type="Button" parent="Botoes"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_0winm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j3qfp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_skdqa")
 
 [node name="TelaInicial" type="Button" parent="Botoes"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="TextoReiniciar" type="Label" parent="."]
-layout_mode = 0
-offset_left = 538.0
-offset_top = 489.0
-offset_right = 643.0
-offset_bottom = 562.0
-theme_override_font_sizes/font_size = 23
-text = "Reiniciar
-"
-
-[node name="TextoTelaInicial" type="Label" parent="."]
-layout_mode = 0
-offset_left = 622.0
-offset_top = 469.0
-offset_right = 750.0
-offset_bottom = 542.0
-theme_override_font_sizes/font_size = 25
-text = "Tela
-Inicial"
-horizontal_alignment = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_8dkuh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0icj0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5fq7v")

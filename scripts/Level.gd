@@ -19,6 +19,7 @@ var cena_plataforma = preload("res://scenes/plataforma.tscn")
 @onready var player = $Player
 @onready var area_dano = $AreaDeDano
 @onready var camera = $Camera2D
+@onready var background = $Fundo
 
 func _ready():
 	velocidade_perigo = GeradorDeEquacoes.velocidade_jogo # Usa a variavel que persiste
@@ -105,3 +106,6 @@ func _process(delta):
 	
 	if player.position.y < camera.position.y:
 		camera.position.y = player.position.y
+	
+	# Faz o fundo acompanhar a câmera
+	background.position.y = camera.position.y - 360

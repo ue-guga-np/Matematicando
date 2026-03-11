@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://djx537ofp1vre"]
+[gd_scene load_steps=8 format=3 uid="uid://djx537ofp1vre"]
 
 [ext_resource type="Script" uid="uid://cju1tfturx5i5" path="res://scripts/Level.gd" id="1_6vs76"]
 [ext_resource type="PackedScene" uid="uid://bvfdb4e24niaf" path="res://scenes/Player.tscn" id="1_k5jlv"]
 [ext_resource type="PackedScene" uid="uid://ckv5n1koyomp8" path="res://scenes/Hud.tscn" id="2_6vs76"]
+[ext_resource type="Texture2D" uid="uid://d0kr0pw23jek6" path="res://assets/cenário.png" id="2_qifjx"]
+[ext_resource type="Texture2D" uid="uid://d2acgxy0qe84n" path="res://assets/area_dano.png" id="4_dke22"]
 [ext_resource type="PackedScene" uid="uid://dgy75yqrxxa8x" path="res://scenes/Plataforma.tscn" id="4_kl8ac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kl8ac"]
@@ -11,25 +13,34 @@ size = Vector2(1290, 73)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_6vs76")
 
+[node name="Plataforma" parent="." instance=ExtResource("4_kl8ac")]
+position = Vector2(490, 340)
+
 [node name="Player" parent="." instance=ExtResource("1_k5jlv")]
+z_index = 1
 position = Vector2(640, 314)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 361)
 
 [node name="AreaDeDano" type="Area2D" parent="."]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeDano"]
 position = Vector2(640, 532)
 shape = SubResource("RectangleShape2D_kl8ac")
 
-[node name="ColorRect" type="ColorRect" parent="AreaDeDano"]
-offset_left = -5.0
-offset_top = 495.0
-offset_right = 1285.0
-offset_bottom = 569.0
+[node name="Sprite2D" type="Sprite2D" parent="AreaDeDano"]
+position = Vector2(640, 560)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_dke22")
+region_enabled = true
+region_rect = Rect2(391, 165, 1836, 1275)
 
 [node name="Hud" parent="." instance=ExtResource("2_6vs76")]
 
-[node name="Plataforma" parent="." instance=ExtResource("4_kl8ac")]
-position = Vector2(490, 340)
+[node name="Fundo" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qifjx")
+centered = false

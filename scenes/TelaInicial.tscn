@@ -1,8 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwf26bcslnj01"]
+[gd_scene load_steps=22 format=3 uid="uid://dwf26bcslnj01"]
 
 [ext_resource type="Script" uid="uid://bakl6q0xsjnlm" path="res://scripts/TelaInicial.gd" id="1_t3tad"]
+[ext_resource type="Texture2D" uid="uid://c6oob1cn36nqx" path="res://assets/menu.png" id="2_17ume"]
+[ext_resource type="Texture2D" uid="uid://bpfbjsnbk4ww4" path="res://assets/play.png" id="3_0b72l"]
+[ext_resource type="Texture2D" uid="uid://y48l5g3mcvs6" path="res://assets/botão_fácil.png" id="3_6ybww"]
+[ext_resource type="Texture2D" uid="uid://cqwgfrr6f02p3" path="res://assets/botão_médio.png" id="4_1exgo"]
+[ext_resource type="Texture2D" uid="uid://blhmwr68xsbm2" path="res://assets/botão_difícil.png" id="5_hgyjh"]
 
-[sub_resource type="SystemFont" id="SystemFont_uham1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgyjh"]
+texture = ExtResource("3_6ybww")
+region_rect = Rect2(133, 1200, 130, 158)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkycc"]
+texture = ExtResource("3_6ybww")
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(133, 1200, 130, 158)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_np5he"]
+texture = ExtResource("3_6ybww")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(133, 1200, 130, 158)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgyjh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_en6fq"]
+texture = ExtResource("4_1exgo")
+region_rect = Rect2(269, 1200, 129, 159)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vb17y"]
+texture = ExtResource("4_1exgo")
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(269, 1200, 129, 159)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w7u8n"]
+texture = ExtResource("4_1exgo")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(269, 1200, 129, 159)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkycc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37s3x"]
+texture = ExtResource("5_hgyjh")
+region_rect = Rect2(404, 1201, 129, 157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4du3"]
+texture = ExtResource("5_hgyjh")
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(404, 1201, 129, 157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sesfr"]
+texture = ExtResource("5_hgyjh")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+region_rect = Rect2(404, 1201, 129, 157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_np5he"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ybww"]
+texture = ExtResource("3_0b72l")
+region_rect = Rect2(907, 1084, 748, 339)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1exgo"]
+texture = ExtResource("3_0b72l")
+region_rect = Rect2(907, 1084, 748, 339)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b72l"]
+texture = ExtResource("3_0b72l")
+expand_margin_left = 15.0
+expand_margin_top = 10.0
+expand_margin_right = 15.0
+expand_margin_bottom = 10.0
+region_rect = Rect2(907, 1084, 748, 339)
 
 [node name="TelaInicial" type="Control"]
 layout_mode = 3
@@ -13,50 +98,56 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t3tad")
 
-[node name="Fundo" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.4509804)
+[node name="Fundo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_17ume")
+expand_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Fundo"]
+layout_mode = 0
+offset_left = 912.0
+offset_top = 492.0
+offset_right = 1204.0
+offset_bottom = 691.0
+color = Color(0, 0.47843137, 1, 0.29803923)
 
 [node name="CheckSubtracao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 530.0
-offset_right = 1222.0
-offset_bottom = 580.0
+offset_left = 926.0
+offset_top = 539.0
+offset_right = 1148.0
+offset_bottom = 589.0
 theme_override_font_sizes/font_size = 30
 text = "Subtração (-)"
 
 [node name="CheckMultiplicacao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 580.0
-offset_right = 1265.0
-offset_bottom = 630.0
+offset_left = 926.0
+offset_top = 589.0
+offset_right = 1191.0
+offset_bottom = 639.0
 theme_override_font_sizes/font_size = 30
 text = "Multiplicação (x)
 "
 
 [node name="CheckDivisao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 630.0
-offset_right = 1222.0
-offset_bottom = 680.0
+offset_left = 926.0
+offset_top = 639.0
+offset_right = 1148.0
+offset_bottom = 689.0
 theme_override_font_sizes/font_size = 30
 text = "Divisão (÷)
 "
 
 [node name="CheckAdicao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 480.0
-offset_right = 1222.0
-offset_bottom = 530.0
+offset_left = 926.0
+offset_top = 489.0
+offset_right = 1148.0
+offset_bottom = 539.0
 theme_override_font_sizes/font_size = 30
 disabled = true
 button_pressed = true
@@ -64,53 +155,51 @@ text = "Adição (+)"
 
 [node name="Velocidades" type="HBoxContainer" parent="Fundo"]
 layout_mode = 0
-offset_top = 637.0
-offset_right = 231.0
-offset_bottom = 709.0
+offset_left = 20.0
+offset_top = 590.0
+offset_right = 251.0
+offset_bottom = 662.0
+scale = Vector2(1.5, 1.5)
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BtnVeloc35" type="Button" parent="Fundo/Velocidades"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Fácil"
+theme_override_styles/normal = SubResource("StyleBoxTexture_hgyjh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fkycc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_np5he")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hgyjh")
 
 [node name="BtnVeloc50" type="Button" parent="Fundo/Velocidades"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Médio"
+theme_override_styles/normal = SubResource("StyleBoxTexture_en6fq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vb17y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w7u8n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fkycc")
 
 [node name="BtnVeloc65" type="Button" parent="Fundo/Velocidades"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Difícil"
-
-[node name="NomeJogo" type="Label" parent="."]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 166.0
-offset_right = 960.0
-offset_bottom = 270.0
-theme_override_fonts/font = SubResource("SystemFont_uham1")
-theme_override_font_sizes/font_size = 60
-text = "MATEMATICANDO"
-horizontal_alignment = 1
+theme_override_styles/normal = SubResource("StyleBoxTexture_37s3x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b4du3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sesfr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_np5he")
 
 [node name="Iniciar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 540.0
-offset_top = 388.0
-offset_right = 740.0
-offset_bottom = 588.0
-
-[node name="TextoIniciar" type="Label" parent="."]
-layout_mode = 0
-offset_left = 602.0
-offset_top = 457.0
-offset_right = 677.0
-offset_bottom = 530.0
-theme_override_font_sizes/font_size = 25
-text = "Iniciar
-"
-horizontal_alignment = 1
-
-[connection signal="pressed" from="Fundo/Velocidades/BtnVeloc65" to="." method="_on_btn_veloc_65_pressed"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -152.0
+offset_right = 172.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6ybww")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1exgo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0b72l")
