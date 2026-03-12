@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxhl2cau54cy2"]
+[gd_scene load_steps=13 format=3 uid="uid://cxhl2cau54cy2"]
 
 [ext_resource type="Script" uid="uid://b3cxkhqnl51gp" path="res://scripts/GameOver.gd" id="1_6bcno"]
 [ext_resource type="Texture2D" uid="uid://ehxu6iitylhm" path="res://assets/botão_fim.png" id="2_4noiy"]
@@ -21,6 +21,8 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 region_rect = Rect2(904, 1081, 751, 338)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4noiy"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dkuh"]
 texture = ExtResource("3_gijjb")
 region_rect = Rect2(1681, 1145, 470, 204)
@@ -36,6 +38,8 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 region_rect = Rect2(1681, 1145, 470, 204)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gijjb"]
 
 [node name="GameOver" type="Control"]
 process_mode = 3
@@ -61,14 +65,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -162.0
-offset_right = 20.0
-offset_bottom = -113.0
+offset_left = -126.5
+offset_top = -165.0
+offset_right = 126.5
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-text = "67"
+theme_override_font_sizes/font_size = 55
 
 [node name="Botoes" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -78,8 +81,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -275.0
-offset_top = -160.0
+offset_top = -170.0
 offset_right = 275.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -89,6 +93,7 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_0winm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j3qfp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_skdqa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4noiy")
 
 [node name="TelaInicial" type="Button" parent="Botoes"]
 layout_mode = 2
@@ -96,3 +101,4 @@ size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_8dkuh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0icj0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5fq7v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gijjb")

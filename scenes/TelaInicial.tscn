@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwf26bcslnj01"]
+[gd_scene load_steps=23 format=3 uid="uid://dwf26bcslnj01"]
 
 [ext_resource type="Script" uid="uid://bakl6q0xsjnlm" path="res://scripts/TelaInicial.gd" id="1_t3tad"]
 [ext_resource type="Texture2D" uid="uid://c6oob1cn36nqx" path="res://assets/menu.png" id="2_17ume"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://y48l5g3mcvs6" path="res://assets/botão_fácil.png" id="3_6ybww"]
 [ext_resource type="Texture2D" uid="uid://cqwgfrr6f02p3" path="res://assets/botão_médio.png" id="4_1exgo"]
 [ext_resource type="Texture2D" uid="uid://blhmwr68xsbm2" path="res://assets/botão_difícil.png" id="5_hgyjh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_en6fq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hgyjh"]
 texture = ExtResource("3_6ybww")
@@ -105,56 +107,72 @@ offset_bottom = 720.0
 texture = ExtResource("2_17ume")
 expand_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Fundo"]
-layout_mode = 0
-offset_left = 912.0
-offset_top = 492.0
-offset_right = 1204.0
-offset_bottom = 691.0
-color = Color(0, 0.47843137, 1, 0.29803923)
-
 [node name="CheckSubtracao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 926.0
-offset_top = 539.0
-offset_right = 1148.0
-offset_bottom = 589.0
-theme_override_font_sizes/font_size = 30
-text = "Subtração (-)"
+offset_left = 878.0
+offset_top = 554.0
+offset_right = 1170.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_focus_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_en6fq")
+text = "SUBTRAÇÃO (-)"
 
 [node name="CheckMultiplicacao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 926.0
-offset_top = 589.0
-offset_right = 1191.0
-offset_bottom = 639.0
-theme_override_font_sizes/font_size = 30
-text = "Multiplicação (x)
+offset_left = 878.0
+offset_top = 604.0
+offset_right = 1241.0
+offset_bottom = 658.0
+theme_override_colors/font_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_focus_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_en6fq")
+text = "MULTIPLICAÇÃO (x)
 "
 
 [node name="CheckDivisao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 926.0
-offset_top = 639.0
-offset_right = 1148.0
-offset_bottom = 689.0
-theme_override_font_sizes/font_size = 30
-text = "Divisão (÷)
+offset_left = 878.0
+offset_top = 654.0
+offset_right = 1104.0
+offset_bottom = 708.0
+theme_override_colors/font_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_focus_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.12156863, 0.29803923, 0.34509805, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_en6fq")
+text = "DIVISÃO (÷)
 "
 
 [node name="CheckAdicao" type="CheckBox" parent="Fundo"]
 layout_mode = 0
-offset_left = 926.0
-offset_top = 489.0
-offset_right = 1148.0
-offset_bottom = 539.0
-theme_override_font_sizes/font_size = 30
+offset_left = 878.0
+offset_top = 504.0
+offset_right = 1100.0
+offset_bottom = 558.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.12040488, 0.29753065, 0.34515172, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_en6fq")
 disabled = true
 button_pressed = true
-text = "Adição (+)"
+text = "ADIÇÃO (+)"
 
 [node name="Velocidades" type="HBoxContainer" parent="Fundo"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.022222223
+anchor_bottom = -0.007407464
 offset_left = 20.0
 offset_top = 590.0
 offset_right = 251.0
@@ -195,9 +213,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -172.0
-offset_top = -152.0
+offset_top = -155.0
 offset_right = 172.0
-offset_bottom = -12.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_6ybww")
