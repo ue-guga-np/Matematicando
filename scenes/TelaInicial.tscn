@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwf26bcslnj01"]
+[gd_scene load_steps=24 format=3 uid="uid://dwf26bcslnj01"]
 
 [ext_resource type="Script" uid="uid://bakl6q0xsjnlm" path="res://scripts/TelaInicial.gd" id="1_t3tad"]
 [ext_resource type="Texture2D" uid="uid://c6oob1cn36nqx" path="res://assets/menu.png" id="2_17ume"]
@@ -74,6 +74,9 @@ expand_margin_bottom = 5.0
 region_rect = Rect2(404, 1201, 129, 157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_np5he"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgyjh"]
+bg_color = Color(0, 0, 0, 0.49803922)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ybww"]
 texture = ExtResource("3_0b72l")
@@ -204,6 +207,15 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_37s3x")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_b4du3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_sesfr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_np5he")
+
+[node name="LabelRecorde" type="Label" parent="Fundo"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 224.0
+offset_right = 235.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_hgyjh")
 
 [node name="Iniciar" type="Button" parent="."]
 layout_mode = 1

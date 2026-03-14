@@ -11,6 +11,10 @@ func _ready():
 
 func definir_pontos(pontuacao_final):
 	label_pontos.text = "Pontos: " + str(pontuacao_final)
+	
+	# Se a pontuação dessa partida for maior que o recorde salvo, atualiza o global
+	if pontuacao_final > GeradorDeEquacoes.recorde_sessao:
+		GeradorDeEquacoes.recorde_sessao = pontuacao_final
 
 func _on_reiniciar_pressionado():
 	get_tree().paused = false # Tira o jogo do pause antes de recarregar

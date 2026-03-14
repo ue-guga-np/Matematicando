@@ -9,7 +9,7 @@ var posicao_x_plataformas = 0 # Guarda o eixo X para não nascer torto
 var jogo_iniciado = false
 
 var cena_game_over = preload("res://scenes/GameOver.tscn")
-var cena_plataforma = preload("res://scenes/plataforma.tscn")
+var cena_plataforma = preload("res://scenes/Plataforma.tscn")
 
 @onready var label_equacao = $Hud/Equacoes
 @onready var label_pontos = $Hud/Pontos
@@ -47,14 +47,42 @@ func atualizar_conta():
 	var botoes = [btn1, btn2, btn3]
 	botoes.shuffle() 
 	
-	botoes[0].text = str(GeradorDeEquacoes.resposta_correta)
-	botoes[1].text = str(GeradorDeEquacoes.resposta_correta + randi_range(1, 4))
-	botoes[2].text = str(GeradorDeEquacoes.resposta_correta - randi_range(1, 4))
+	var certa = GeradorDeEquacoes.resposta_correta
+	
+	# Cria uma lista que já começa com a resposta certa guardada
+	var respostas_para_botoes = [certa]
+	
+	# Fica sorteando números até termos 3 opções únicas
+	while respostas_para_botoes.size() < 3:
+		# Sorteia uma variação de -5 a +5
+		var variacao = randi_range(-5, 5)
+		
+		# Não queremos somar zero, senão teremos a resposta certa duplicada
+		if variacao == 0:
+			continue
+			
+		var nova_errada = certa + variacao
+		
+		# Impede de gerar números negativos nas alternativas
+		if nova_errada < 0:
+			continue
+			
+		# Se esse número ainda não está na nossa lista, nós o adicionamos
+		if not respostas_para_botoes.has(nova_errada):
+			respostas_para_botoes.append(nova_errada)
+			
+	# Distribui as 3 respostas para os botões que já foram embaralhados
+	botoes[0].text = str(respostas_para_botoes[0]) # Esta é a certa
+	botoes[1].text = str(respostas_para_botoes[1]) # Errada aleatória 1
+	botoes[2].text = str(respostas_para_botoes[2]) # Errada aleatória 2
 
 func _on_opcao_pressionada(botao_clicado):
 	if botao_clicado.text == str(GeradorDeEquacoes.resposta_correta):
 		jogo_iniciado = true
-		pontos += 10
+		
+		# Usa os pontos dinâmicos baseados na operação em vez de um número fixo!
+		pontos += GeradorDeEquacoes.pontos_da_rodada 
+		
 		player.acertou_conta() 
 		criar_plataforma() 
 		resetar_perigo()   
@@ -63,7 +91,6 @@ func _on_opcao_pressionada(botao_clicado):
 		pontos -= 5
 		if pontos < 0:
 			pontos = 0
-		# Punição: o perigo dá um salto maior pra cima
 		area_dano.position.y -= 100 
 		
 	atualizar_pontos()

@@ -8,6 +8,7 @@ extends Control
 @onready var btn_veloc35 = $Fundo/Velocidades/BtnVeloc35
 @onready var btn_veloc50 = $Fundo/Velocidades/BtnVeloc50
 @onready var btn_veloc65 = $Fundo/Velocidades/BtnVeloc65
+@onready var label_recorde = $Fundo/LabelRecorde
 
 # valor selecionado pelo jogador (usado ao iniciar o Level)
 var escolha_velocidade := 50
@@ -50,6 +51,11 @@ func _ready():
 		btn_veloc50.button_pressed = true
 	elif escolha_velocidade == 75:
 		btn_veloc65.button_pressed = true
+		
+	if GeradorDeEquacoes.recorde_sessao > 0:
+		label_recorde.text = "Recorde: " + str(GeradorDeEquacoes.recorde_sessao)
+	else:
+		label_recorde.text = "Recorde: 0"
 
 # --- FUNÇÕES DAS CAIXINHAS ---
 # O Godot automaticamente passa a variável 'ligado' (true/false) quando a caixa é clicada
