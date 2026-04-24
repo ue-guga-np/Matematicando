@@ -129,7 +129,7 @@ Script auxiliar/legado que contém lógica base de pontuação e comunicação c
 ### Passos
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/Matematicando.git
+   git clone https://github.com/ue-guga-np/Matematicando.git
    ```
 2. Abra o **Godot Engine 4.5**.
 3. Clique em **Importar** e selecione o arquivo `project.godot` na raiz do projeto.
