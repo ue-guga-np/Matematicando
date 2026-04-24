@@ -150,15 +150,10 @@ O projeto está configurado com:
 
 | Nome | Função | Contato |
 |---|---|---|
-| <!-- Nome do colaborador 1 --> | <!-- Ex: Programação / Game Design --> | <!-- Ex: GitHub, E-mail ou LinkedIn --> |
-| <!-- Nome do colaborador 2 --> | <!-- Ex: Arte / UI Design --> | <!-- Ex: GitHub, E-mail ou LinkedIn --> |
-| <!-- Nome do colaborador 3 --> | <!-- Ex: Level Design / QA --> | <!-- Ex: GitHub, E-mail ou LinkedIn --> |
-| <!-- Nome do colaborador 4 --> | <!-- Ex: Documentação / Testes --> | <!-- Ex: GitHub, E-mail ou LinkedIn --> |
-
-> **📝 Nota:** Edite a tabela acima substituindo os comentários `<!-- -->` pelos nomes reais dos integrantes do grupo, suas respectivas funções no projeto e informações de contato.
->
-> **Exemplo preenchido:**
-> | João Silva | Programação & Game Design | [GitHub](https://github.com/joaosilva) |
+| Giovanna Beatriz Ramos | Arte & UI/UX Design | https://www.linkedin.com/in/giovanna-beatriz-ramos-a87711293/ |
+| Gustavo Alexandro Pelissari | Programação & Game Design | https://www.linkedin.com/in/gustavo-pelissari-180505291/ |
+| Igor Henrique Koga Vigato | Programação & Game Design | https://www.linkedin.com/in/igor-koga-021031292/ |
+| João Gabriel De Araújo Meira | Programação & Game Design | https://www.linkedin.com/in/jo%C3%A3o-gabriel-de-ara%C3%BAjo-meira-93801b406/ |
 
 ---
 
